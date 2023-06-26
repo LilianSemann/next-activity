@@ -1,10 +1,11 @@
 "use client"
 
+import React from "react"
 import styled from "styled-components"
 
-export default function Contact() {
+export default function About() {
   return (
-    <Conteudo>That's my contact page</Conteudo>
+    <Conteudo>That's my about page</Conteudo>
   )
 }
 

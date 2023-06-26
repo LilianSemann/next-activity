@@ -4,7 +4,7 @@ import styled from "styled-components"
 
 export default function Home() {
   return (
-    <Conteudo></Conteudo>
+    <Conteudo>That's my home page</Conteudo>
   )
 }
 
