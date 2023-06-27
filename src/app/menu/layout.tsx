@@ -1,16 +1,16 @@
 "use client"
 
 import React from "react";
-import ActiveHover from ".";
+import ActiveHover from "./menu";
 import styled from "styled-components";
 
-export default function MenuLayout({ children }) {
+export default async function MenuLayout({ children }) {
     const featuredPosts = ["home", "about", "contact"]
     return (
         <div>
             <Wrapper>
-                {featuredPosts.map((post, index) => (
-                    <div key={index}>
+                {featuredPosts.map((post, menu) => (
+                    <div key={menu}>
                         <ActiveHover id={post}>
                             {post}
                         </ActiveHover>
