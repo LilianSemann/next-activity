@@ -4,13 +4,17 @@ import Link from "next/link";
 import { useSelectedLayoutSegment } from "next/navigation";
 import styled from "styled-components";
 
-export default function ActiveHover({ id, children }) {
+export default function ActiveHover({ id, children,
+}: {
+  children: React.ReactNode
+  id: React.ReactNode
+}) {
     const segment = useSelectedLayoutSegment();
     const isActive = id === segment;
 
     return (
         <Wrapper active={isActive}>
-            <Link href={`/menu/${id}`}>
+            <Link href={`/${id}`}>
                 {children}
             </Link>
         </Wrapper>
@@ -18,6 +22,9 @@ export default function ActiveHover({ id, children }) {
 }
 
 const Wrapper = styled.div<{active: boolean}>`
+  display: flex;
+  gap: 10px;
+  
     a {
         padding: 0.5em 1em;
         color: ${props=>props.active?"white":"black"};

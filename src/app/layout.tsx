@@ -1,6 +1,8 @@
 import StyledComponentsRegistry from '@/lib/registry'
 import './globals.css'
 import { Inter } from 'next/font/google'
+import ActiveHover from './menu'
+import Styleddiv from './styleddiv'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -14,11 +16,23 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+  const featuredPosts = ["home", "about", "contact"]
   return (
     <html lang="en">
       <body className={inter.className}>
         <StyledComponentsRegistry>
-          {children}
+          <div>
+            <Styleddiv>
+              {featuredPosts.map((post, menu) => (
+                  <div key={menu}>
+                      <ActiveHover id={post}>
+                          {post}
+                      </ActiveHover>
+                  </div>
+              ))}
+            </Styleddiv>
+            {children}
+          </div>
         </StyledComponentsRegistry>
       </body>
     </html>
