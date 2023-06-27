@@ -16,7 +16,7 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-  const featuredPosts = ["home", "about", "contact"]
+  const featuredPosts = ["", "about", "contact"]
   return (
     <html lang="en">
       <body className={inter.className}>
@@ -24,11 +24,11 @@ export default function RootLayout({
           <div>
             <Styleddiv>
               {featuredPosts.map((post, menu) => (
-                  <div key={menu}>
-                      <ActiveHover id={post}>
-                          {post}
-                      </ActiveHover>
-                  </div>
+                <div key={menu}>
+                  <ActiveHover id={post}>
+                    {post}
+                  </ActiveHover>
+                </div>
               ))}
             </Styleddiv>
             {children}
